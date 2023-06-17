@@ -104,7 +104,6 @@ public class HeightMap {
                         }
                     }
                     toExplore.remove(currentPoint);
-                    System.out.println(currentPoint);
                 }
                 basinList.add(currentBasin.size());
                 Collections.sort(basinList);
