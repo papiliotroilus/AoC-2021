@@ -20,7 +20,7 @@ public class NodeMap {
     public void chart(List<String> nodeLink) {
         String origin = nodeLink.get(0);
         String destination = nodeLink.get(1);
-        // Make sure that origin is not end and destination is not start
+        // Make sure that destination is not start
         if (!destination.equals("start")) {
             // Test if origin key is not already present in node index
             if (!nodeIndex.containsKey(origin)) { // If not:
@@ -28,8 +28,9 @@ public class NodeMap {
                 nodeIndex.put(origin, indexIterator); // Create new index for origin from iterator
                 indexIterator += 1; // Increment iterator by one for next new origin
             }
-            // Add destination to link sublist of index corresponding to origin
+            // Test if origin key is not the end node
             if (!origin.equals("end")) {
+                // If not, add destination to link sublist of index corresponding to origin
                 nodeLinks.get(nodeIndex.get(origin)).add(destination);
             }
         }
