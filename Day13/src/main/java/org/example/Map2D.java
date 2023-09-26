@@ -80,15 +80,13 @@ public class Map2D {
     }
 
     // Method for printing map
-    public void printMap() {
+    public void print() {
         for (var mapRow : mapContent) {
             String formattedString = Arrays.toString(mapRow)
                     .replace(",", "")
                     .replace("[", "")
                     .replace("]", "")
                     .replace(" ", "")
-                    .replace("#", "█")
-                    .replace(".", " ")
                     .trim();
             System.out.println(formattedString);
         }
